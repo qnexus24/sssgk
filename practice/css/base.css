@@ -1,0 +1,97 @@
+/**
+ * practice/css/base.css
+ * Global typography, reset, focus outlines, and layout container.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Responsive Wrap Container */
+.wrap {
+  width: min(var(--wrap-max), 100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 650px) {
+  .wrap {
+    width: min(var(--wrap-max), 100% - 28px);
+  }
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(1.85rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.45rem, 3vw, 1.85rem); }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--navy2);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--gold-dark);
+}
+
+/* Kicker label per 02_DESIGN_SYSTEM.md */
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  color: var(--gold-dark);
+  font-weight: 850;
+  margin-bottom: 6px;
+}
+
+/* Accessible interactive focus outline (02_DESIGN_SYSTEM.md) */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

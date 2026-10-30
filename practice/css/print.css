@@ -1,0 +1,171 @@
+/**
+ * practice/css/print.css
+ * Clean A4 print stylesheet per 02_DESIGN_SYSTEM.md §Print and 06 §C2.
+ * Hides interactive navigation and buttons; renders clean score tables,
+ * logo header, and formatted review questions with page-break protection.
+ */
+
+/* On screen: hide print-only elements */
+.print-only {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 15mm 15mm;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Unhide print-only header & footer */
+  .print-only {
+    display: block !important;
+  }
+
+  .print-footer {
+    display: block !important;
+    text-align: center !important;
+    margin-top: 18pt !important;
+    padding-top: 8pt !important;
+    border-top: 1px solid #d1d5db !important;
+    font-size: 8pt !important;
+    color: #4b5563 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-footer b {
+    color: #071d3c !important;
+    font-weight: 750 !important;
+  }
+
+  /* Hide navigation, buttons, interactive tools */
+  .header,
+  .topbar,
+  .footer,
+  .nav-actions,
+  .test-topbar,
+  .palette-card,
+  .palette-toggle-btn,
+  .btn,
+  .modal-overlay,
+  .no-print,
+  #palette-summary {
+    display: none !important;
+  }
+
+  /* Expand full width for A4 printable area */
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #071d3c !important;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 1.6rem !important;
+    margin-bottom: 6pt !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 4pt !important;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 4pt !important;
+  }
+
+  /* Cards and Question Blocks */
+  .card,
+  .question-card {
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12pt !important;
+    padding: 10pt 12pt !important;
+    background: #ffffff !important;
+  }
+
+  /* Tables */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+    font-size: 9.5pt !important;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th {
+    border-bottom: 2px solid #071d3c !important;
+    color: #071d3c !important;
+    font-weight: 750 !important;
+    padding: 6pt 4pt !important;
+  }
+
+  td {
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 6pt 4pt !important;
+  }
+
+  /* Badges & Pills */
+  .pill {
+    border: 1px solid #9ca3af !important;
+    color: #374151 !important;
+    padding: 2px 6px !important;
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+  }
+
+  /* Notice boxes */
+  .notice {
+    border: 1px solid #d1d5db !important;
+    background: #f9fafb !important;
+    padding: 6pt 8pt !important;
+    font-size: 8.5pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  /* Avoid breaking option lists across pages */
+  .options-list {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}

@@ -1,0 +1,53 @@
+/**
+ * practice/css/tokens.css
+ * Core design tokens matching landing page and 02_DESIGN_SYSTEM.md.
+ */
+
+:root {
+  /* Brand palette */
+  --navy: #071d3c;
+  --navy2: #0c3260;
+  --gold: #d7a43b;
+  --gold2: #f4d17b;
+  --gold-dark: #a77513;
+  --ink: #15243a;
+  --muted: #64748b;
+  --paper: #f7f9fc;
+  --line: #e3e9f1;
+  --white: #ffffff;
+  --shadow: 0 22px 60px rgba(7, 29, 60, 0.12);
+  --shadow-sm: 0 4px 16px rgba(7, 29, 60, 0.06);
+  --shadow-md: 0 12px 32px rgba(7, 29, 60, 0.09);
+  --shadow-lg: 0 28px 72px rgba(7, 29, 60, 0.18);
+
+  /* Functional alert & evaluation states */
+  --ok: #15803d;
+  --ok-bg: #effaf2;
+  --ok-border: #86efac;
+  --bad: #b91c1c;
+  --bad-bg: #fdf1f1;
+  --bad-border: #fca5a5;
+  --warn: #b45309;
+  --warn-bg: #fff8e6;
+  --warn-border: #fcd34d;
+  --info: #0369a1;
+  --info-bg: #eef4fc;
+  --info-border: #bae6fd;
+  --review: #6d28d9;
+  --review-bg: #f5f3ff;
+  --review-border: #c4b5fd;
+
+  /* Typography stack */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Layout widths */
+  --wrap-max: 1160px;
+}
+
